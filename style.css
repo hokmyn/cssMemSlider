@@ -25,37 +25,30 @@ input[type="radio"] {
   flex-basis: 100%;
 }
 .slider-item {
-  position: relative;
   height: inherit;
-  top: 0;
-  opacity: 0;
   width: inherit;
-  z-index: 0;
-  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+  transition: background ease-in-out 0.8s;
 }
 .slide1 {
-  background: url("./imgs/slide1.jpg") 50% 50% no-repeat;
+  background-image: url("./imgs/slide1.jpg");
   background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
-.slide2 {
-  background: url("./imgs/slide2.jpg") 50% 50% no-repeat;
+#slide1:checked ~ .slider > .slide1 {
+  background-image: url("./imgs/slide1.jpg");
 }
-.slide3 {
-  background: url("./imgs/slide3.jpg") 50% 50% no-repeat;
+#slide2:checked ~ .slider > .slide1 {
+  background-image: url("./imgs/slide2.jpg");
 }
-.slide4 {
-  background: url("./imgs/slide4.jpg") 50% 50% no-repeat;
+#slide3:checked ~ .slider > .slide1 {
+  background-image: url("./imgs/slide3.jpg");
 }
-.slide5 {
-  background: url("./imgs/slide5.jpg") 50% 50% no-repeat;
+#slide4:checked ~ .slider > .slide1 {
+  background-image: url("./imgs/slide4.jpg");
 }
-#slide1:checked ~ .slider > .slide1,
-#slide2:checked ~ .slider > .slide2,
-#slide3:checked ~ .slider > .slide3,
-#slide4:checked ~ .slider > .slide4,
-#slide5:checked ~ .slider > .slide5 {
-  opacity: 1;
-  z-index: 1;
+#slide5:checked ~ .slider > .slide1 {
+  background-image: url("./imgs/slide5.jpg");
 }
 .text-slider {
   color: #fff;
