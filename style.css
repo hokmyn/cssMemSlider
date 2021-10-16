@@ -1,3 +1,99 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  height: 80%;
+  margin: 50px auto;
+  position: relative;
+  width: 37%;
+  background: #24292f;
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+}
+input[type="radio"] {
+  display: none;
+}
+.slider {
+  height: 650px;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+.slider-item {
+  position: relative;
+  height: inherit;
+  top: 0;
+  opacity: 0;
+  width: inherit;
+  z-index: 0;
+  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+}
+.slide1 {
+  background: url("./imgs/slide1.jpg") 50% 50% no-repeat;
+  background-size: contain;
+}
+.slide2 {
+  background: url("./imgs/slide2.jpg") 50% 50% no-repeat;
+}
+.slide3 {
+  background: url("./imgs/slide3.jpg") 50% 50% no-repeat;
+}
+.slide4 {
+  background: url("./imgs/slide4.jpg") 50% 50% no-repeat;
+}
+.slide5 {
+  background: url("./imgs/slide5.jpg") 50% 50% no-repeat;
+}
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+  opacity: 1;
+  z-index: 1;
+}
+.text-slider {
+  color: #fff;
+}
+.controls {
+  display: flex;
+  align-items: center;
+}
+label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  position: relative;
+  width: 8px;
+  border-radius: 50%;
+  transition: background ease-in-out 0.2s;
+  background: #5199f1;
+  border: 8px solid #24292f;
+  margin-right: 2px;
+  box-sizing: content-box;
+}
+label:last-child {
+  margin-right: 0;
+}
+label:hover {
+  background: #fff;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+  background: #24292f;
+  border: 1px solid #5199f1;
+  margin-right: 9px;
+  margin-left: 9px;
+}
+#slide1:checked ~ .controls label:nth-of-type(1) {
+  margin-left: 0;
 }
