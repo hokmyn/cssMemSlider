@@ -7,9 +7,9 @@
   height: 80%;
   margin: 50px auto;
   position: relative;
-  width: 37%;
+  width: 50%;
   background: #24292f;
-  padding: 0 20px 20px;
+  padding: 20px 20px 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -23,11 +23,12 @@ input[type="radio"] {
   height: 650px;
   flex-grow: 1;
   flex-basis: 100%;
+  margin-bottom: 10px;
 }
 .slider-item {
   height: inherit;
   width: inherit;
-  transition: background ease-in-out 0.8s;
+  transition: background cubic-bezier(0.1, 0.7, 1, 0.1) 0.3s;
   background-image: url("./imgs/slide1.jpg");
   background-size: contain;
   background-position: 50% 50%;
@@ -54,7 +55,7 @@ input[type="radio"] {
   font-size: 1.2rem;
   font-family: Arial;
   overflow: hidden;
-  max-width: 40%;
+  max-width: 180px;
   position: relative;
 }
 .text-slides {
@@ -71,21 +72,24 @@ input[type="radio"] {
   left: 0;
 }
 #slide2:checked ~ .text-slider > .text-slides {
-  left: -180px;
+  left: -184px;
 }
 #slide3:checked ~ .text-slider > .text-slides {
-  left: -360px;
+  left: -356px;
 }
 #slide4:checked ~ .text-slider > .text-slides {
-  left: -540px;
+  left: -556px;
 }
 #slide5:checked ~ .text-slider > .text-slides {
-  left: -720px;
+  left: -736px;
 }
 #slide3:checked ~ .text-slider {
   margin-top: 15px;
 }
 #slide3:checked ~ .controls {
+  margin-top: 15px;
+}
+#slide3:checked ~ .slider {
   margin-top: 15px;
 }
 .controls {
@@ -111,7 +115,6 @@ label:last-child {
 label:hover {
   background: #fff;
 }
-
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
 #slide3:checked ~ .controls label:nth-of-type(3),
@@ -122,6 +125,43 @@ label:hover {
   margin-right: 9px;
   margin-left: 9px;
 }
+#slide1:checked ~ .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .controls label:nth-of-type(4):hover,
+#slide5:checked ~ .controls label:nth-of-type(5):hover {
+  border-color: #fff;
+}
 #slide1:checked ~ .controls label:nth-of-type(1) {
   margin-left: 0;
+}
+@media screen and (max-width: 1024px) {
+  .slider {
+    height: 460px;
+  }
+  #slide4:checked ~ .slider {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .wrapper {
+    width: 95%;
+  }
+  .slider {
+    height: 325px;
+  }
+  .text-slider {
+    order: 3;
+  }
+  .controls {
+    order: 2;
+    justify-content: center;
+    flex-basis: 100%;
+  }
+  #slide3:checked ~ .controls {
+    margin-top: 0;
+  }
+  #slide3:checked ~ .text-slider {
+    margin-top: 0;
+  }
 }
